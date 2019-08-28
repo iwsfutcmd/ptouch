@@ -29,8 +29,8 @@ def encode_raster_transfer(data):
 
         # Write number of bytes to transfer (n1 + n2*256)
         length = len(packed_chunk)
-        buf += unsigned_char.pack( int(length % 256) )
-        buf += unsigned_char.pack( int(length // 256) )
+        buf += unsigned_char.pack(length % 256)
+        buf += unsigned_char.pack(length // 256)
 
         # Write data
         buf += packed_chunk
