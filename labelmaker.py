@@ -177,9 +177,9 @@ def write_bt(data, dryrun=False):
 
     # Number of raster lines in image data
     raster_lines = len(data) // 16
-    print(raster_lines, raster_lines % 256, int(raster_lines // 256))
+    print(raster_lines, raster_lines % 256, raster_lines // 256)
     sock.send( unsigned_char.pack( raster_lines % 256 ) )
-    sock.send( unsigned_char.pack( int(raster_lines // 256) ) )
+    sock.send( unsigned_char.pack( raster_lines // 256) )
 
     # Unused data bytes in the "set media and quality" command
     sock.send(b"\x00\x00\x00\x00")
