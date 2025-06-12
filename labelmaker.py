@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-import binascii
-import packbits
+# import binascii
+# import packbits
 import serial
 import sys
-import time
+# import time
 import bluetooth
 
 from labelmaker_encode import encode_raster_transfer, read_png, unsigned_char
@@ -66,7 +66,8 @@ def print_status(raw):
 
 def write(data, dryrun=False):
     ser = serial.Serial(
-        '/dev/rfcomm0',
+        # '/dev/rfcomm0',
+        '/dev/tty.PT-300BT8415',
         baudrate=9600,
         stopbits=serial.STOPBITS_ONE,
         parity=serial.PARITY_NONE,
